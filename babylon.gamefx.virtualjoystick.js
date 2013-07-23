@@ -1,4 +1,6 @@
-﻿// Mainly based on these 2 articles : 
+﻿/// <reference path="/GameFX/babylon.gamefx.collection.js" />
+
+// Mainly based on these 2 articles : 
 // Creating an universal virtual touch joystick working for all Touch models thanks to Hand.JS : http://blogs.msdn.com/b/davrous/archive/2013/02/22/creating-an-universal-virtual-touch-joystick-working-for-all-touch-models-thanks-to-hand-js.aspx
 // & on Seb Lee-Delisle original work: http://seb.ly/2011/04/multi-touch-game-controller-in-javascripthtml5-for-ipad/ 
 

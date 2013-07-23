@@ -1,4 +1,6 @@
-﻿var BABYLON;
+﻿/// <reference path="/GameFX/babylon.gamefx.gameentity2D.js" />
+
+var BABYLON;
 (function (BABYLON) {
     (function (GameFX) {
         var GameEntity3D = (function (_super) {
@@ -30,7 +32,7 @@
             GameEntity3D.prototype.loaded = function (meshes, particleSystems) {
             };
 
-            GameEntity3D.prototype.onDispose = function () {
+            GameEntity3D.prototype.onDispose = function (thatEntity) {
             };
             GameEntity3D.prototype.moveOnAxisRelativeToMesh = function (moveVector) {
                 var entityTransform = BABYLON.Matrix.RotationYawPitchRoll(this._mesh.rotation.y, this._mesh.rotation.x, this._mesh.rotation.z);

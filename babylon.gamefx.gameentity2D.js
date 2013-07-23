@@ -1,4 +1,6 @@
-﻿var BABYLON;
+﻿/// <reference path="/GameFX/babylon.gamefx.gameentity.js" />
+
+var BABYLON;
 (function (BABYLON) {
     (function (GameFX) {
         var GameEntity2D = (function (_super) {

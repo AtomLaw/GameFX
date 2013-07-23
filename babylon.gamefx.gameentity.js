@@ -77,7 +77,8 @@ var BABYLON;
             GameEntity.prototype.markForRemove = function() {
                 var index = this._gameWorld.entities.indexOf(this);
                 if (index !== -1) {
-                    this._gameWorld.entities[index]._mesh.dispose();
+                    if (this._gameWorld.entities[index]._mesh != null)
+                        this._gameWorld.entities[index]._mesh.dispose();
                     this._gameWorld.entities.splice(index, 1);
                 }
                 index = this._gameWorld.entitiesRegisterCollision.indexOf(this);

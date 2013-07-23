@@ -1,9 +1,16 @@
-﻿var BABYLON;
+﻿/// <reference path="/GameFX/babylon.gamefx.keyboardmanager.js" />
+/// <reference path="/GameFX/babylon.gamefx.virtualjoystick.js" />
+/// <reference path="/GameFX/babylon.gamefx.assetsmanager.js" />
+/// <reference path="/GameFX/babylon.gamefx.dashboard.js" />
+/// <reference path="/GameFX/babylon.gamefx.gameentity3D.js" />
+/// <reference path="/GameFX/babylon.gamefx.dashboard.js" />
+
+var BABYLON;
 (function (BABYLON) {
     (function (GameFX) {
         var GameWorld = (function () {
             var that;
-
+            
             function GameWorld(canvasId) {
                 this.canvas = document.getElementById(canvasId);
                 this.engine = new BABYLON.Engine(this.canvas, true);
@@ -25,6 +32,15 @@
 
                 that = this;
                 BABYLON.Tools.QueueNewFrame(function () { that.renderLoop(); });
+            }
+            
+            GameWorld.prototype.getEntityWithMesh = function(mesh) {
+                for (var i = 0; i < this.entities.length; i++) {
+                    if (this.entities[i]._ == mesh) {
+                        return this.entities[i];
+                    }
+                }
+                return null;
             }
 
             GameWorld.prototype.renderLoop = function () {

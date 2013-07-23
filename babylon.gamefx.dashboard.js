@@ -24,6 +24,18 @@
                 
             };
             
+            Dashboard.prototype.endGame = function () {
+                if (that.loadingText != null) {
+                    that.loadingText.innerHTML = "End Game";
+                    that.loadingText.style.webkitTransform = "translateX(0px)";
+                    that.loadingText.style.transform = "translateX(0px)";
+                }
+                if (that.renderCanvas != null) {
+                    that.renderCanvas.style.display = "none";
+                }
+            }
+
+
             Dashboard.prototype.endLoading = function () {
                 if (that.loadingText != null) {
                     that.loadingText.style.webkitTransform = "";
